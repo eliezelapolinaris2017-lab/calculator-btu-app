@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Oasis BTU Pro</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">BTU</div>
+      <div>
+        <div class="brandTitle">Oasis BTU Pro</div>
+        <div class="brandSub">Calculadora rápida · Operación 2026</div>
+      </div>
+    </div>
+
+    <div class="topActions">
+      <button class="btn ghost" id="btnReset" type="button">Reset</button>
+      <button class="btn" id="btnCalc" type="button">Calcular</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="gridCards">
+
+      <article class="card kpi kpi-a">
+        <div class="kpiLabel">BTU Recomendado</div>
+        <div class="kpiValue" id="outBTU">—</div>
+        <div class="kpiHint" id="outHint">Listo cuando tú estés.</div>
+      </article>
+
+      <article class="card kpi kpi-b">
+        <div class="kpiLabel">Rango sugerido</div>
+        <div class="kpiValue" id="outRange">—</div>
+        <div class="kpiHint">Margen ±10% para decisión rápida</div>
+      </article>
+
+      <article class="card kpi kpi-c">
+        <div class="kpiLabel">Modo</div>
+        <div class="kpiValue" id="outMode">—</div>
+        <div class="kpiHint">Residencial / Comercial</div>
+      </article>
+
+    </section>
+
+    <section class="card section">
+      <div class="sectionHead">
+        <div class="sectionTitle">Inputs (mínimos, pero serios)</div>
+        <div class="pill">ft² + altura + carga</div>
+      </div>
+
+      <div class="grid4">
+        <div class="field">
+          <label>Área (ft²)</label>
+          <input class="input" id="area" type="number" min="0" step="1" placeholder="Ej: 180" />
+        </div>
+        <div class="field">
+          <label>Altura (ft)</label>
+          <input class="input" id="height" type="number" min="0" step="0.1" value="8" />
+        </div>
+        <div class="field">
+          <label>Personas</label>
+          <input class="input" id="people" type="number" min="0" step="1" value="2" />
+        </div>
+        <div class="field">
+          <label>Tipo</label>
+          <select class="input" id="mode">
+            <option value="res" selected>Residencial</option>
+            <option value="com">Comercial</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="card mini mini-sun">
+          <div class="miniTitle">Sol directo</div>
+          <div class="miniRow">
+            <label class="toggle">
+              <input type="checkbox" id="sun" />
+              <span>Activar</span>
+            </label>
+            <div class="miniHint">+10% carga</div>
+          </div>
+        </div>
+
+        <div class="card mini mini-kitchen">
+          <div class="miniTitle">Cocina / calor fuerte</div>
+          <div class="miniRow">
+            <label class="toggle">
+              <input type="checkbox" id="kitchen" />
+              <span>Activar</span>
+            </label>
+            <div class="miniHint">+15% carga</div>
+          </div>
+        </div>
+
+        <div class="card mini mini-insul">
+          <div class="miniTitle">Aislamiento</div>
+          <div class="miniRow">
+            <select class="input" id="insul">
+              <option value="good" selected>Bueno</option>
+              <option value="avg">Normal</option>
+              <option value="poor">Pobre</option>
+            </select>
+            <div class="miniHint">Ajuste fino</div>
+          </div>
+        </div>
+
+        <div class="card mini mini-windows">
+          <div class="miniTitle">Ventanas grandes</div>
+          <div class="miniRow">
+            <select class="input" id="windows">
+              <option value="no" selected>No</option>
+              <option value="some">Algunas</option>
+              <option value="many">Muchas</option>
+            </select>
+            <div class="miniHint">+0% / +7% / +12%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rowBtns" style="margin-top:12px">
+        <button class="btn ghost" id="btnCopyBTU" type="button">Copiar BTU</button>
+        <button class="btn ghost" id="btnCopyText" type="button">Copiar resumen</button>
+      </div>
+
+      <div class="hint" id="calcNote">Esto es cálculo práctico para campo. Ajusta por carga real, orientación y equipos.</div>
+    </section>
+  </main>
+
+  <a class="hub-fab" id="hubBackBtn" href="https://eliezelapolinaris2017-lab.github.io/oasis-hub/" title="Volver a Oasis Hub">⟵ Hub</a>
+
+  <script src="app.js"></script>
+</body>
+</html>
